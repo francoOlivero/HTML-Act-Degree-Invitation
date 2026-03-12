@@ -12,7 +12,7 @@
     <style>
         @keyframes mathFall {
             0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(150vh) rotate(360deg); opacity: 0; }
         }
         .animate-math { animation: mathFall linear forwards; }
     </style>
@@ -32,16 +32,16 @@
             </div>
             
             <div class="relative z-10">
-                <div class="inline-block bg-blue-500/30 backdrop-blur-md px-4 py-1 rounded-full text-sm font-semibold mb-4 border border-blue-400/30">
-                    FACULTAD DE CIENCIAS ECONÓMICAS - UBA
+                <div class="inline-block bg-blue-500/30 backdrop-blur-md px-4 py-2 rounded-2xl text-sm font-semibold mb-4 border border-blue-400/30">
+                    FACULTAD DE CIENCIAS ECONÓMICAS<br>UBA
                 </div>
                 
                 <div class="flex items-center justify-center gap-3 mb-2">
-                    <img src="Logo-FCE.png" alt="Logo FCE" class="w-14 h-14 sm:w-20 sm:h-20 object-contain drop-shadow-lg shrink-0" />
+                    <img src="Logo-FCE.png" alt="Logo FCE" class="w-15 h-15 sm:w-20 sm:h-20 object-contain drop-shadow-lg shrink-0" />
                     <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-none text-center">
                         ¡HABEMUS<br class="sm:hidden" /> ACTUARIO!
                     </h1>
-                    <div class="w-14 h-14 sm:w-20 sm:h-20 bg-white rounded-full p-1.5 shrink-0 flex items-center justify-center drop-shadow-lg">
+                    <div class="w-15 h-15 sm:w-20 sm:h-20 bg-white rounded-full p-1.5 shrink-0 flex items-center justify-center drop-shadow-lg">
                         <img src="UBA.png" alt="Logo UBA" class="w-full h-full object-contain" />
                     </div>
                 </div>
@@ -235,24 +235,29 @@
                 confettiContainer.classList.remove('hidden');
                 confettiContainer.innerHTML = ''; // limpiar por si acaso
                 
-                for(let i=0; i<240; i++){
+                for(let i=0; i<400; i++){
                     const el = document.createElement('div');
                     // Cambiamos 'text-3xl' por 'text-4xl sm:text-5xl' para agrandar los símbolos
                     el.className = 'absolute animate-math text-4xl sm:text-5xl font-black opacity-80';
                     el.style.left = `${Math.random() * 100}%`;
                     el.style.top = `-10%`;
-                    el.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                    el.style.animationDelay = `${Math.random() * 0.5}s`;
+                    el.style.animationDuration = `${Math.random() * 4 + 3}s`;
+                    el.style.animationDelay = `${Math.random() * 8}s`;
                     el.style.color = colors[Math.floor(Math.random() * colors.length)];
                     el.innerText = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
                     confettiContainer.appendChild(el);
                 }
 
-                // Ocultar confetti después de 5 segundos
+                // Ocultar confetti después de 12 segundos
                 setTimeout(() => {
                     confettiContainer.classList.add('hidden');
                     confettiContainer.innerHTML = '';
-                }, 5000);
+                }, 12000);
+
+                // Desplazar hacia el botón de WhatsApp
+                setTimeout(() => {
+                    waButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
 
             } else {
                 statusBox.className = "w-full p-4 rounded-xl text-center font-bold flex flex-col items-center justify-center gap-2 bg-slate-100 text-slate-600";
