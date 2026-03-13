@@ -48,7 +48,9 @@
 
                 <p class="text-blue-100 text-lg mt-3">
                     Después de tantas derivadas,<br />
-                    ¡llegó el momento!
+                    <span class="flex items-center justify-center gap-2 mt-1">
+                        llegó el momento. ¡Me recibo! <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </span>
                 </p>
             </div>
         </div>
@@ -78,7 +80,7 @@
                 </div>
                 <div>
                     <p class="text-sm text-slate-500 font-medium">¿Cuándo?</p>
-                    <p class="text-lg font-bold">Jueves 19</p>
+                    <p class="text-lg font-bold">Jueves 19 de Marzo</p>
                     <p class="text-sm text-slate-500 italic">Hay pocas chances de que esta fecha cambie.</p>
                 </div>
             </div>
@@ -90,7 +92,7 @@
                 <div>
                     <p class="text-sm text-slate-500 font-medium">¿A qué hora?</p>
                     <p class="text-lg font-bold">Entre 19:00 y 21:00 HS</p>
-                    <p class="text-sm text-slate-500 italic">Asumiendo una distribución uniforme del tiempo de salida del aula (depende del orden de presentaciones).</p>
+                    <p class="text-sm text-slate-500 italic">Asumiendo una distribución uniforme del<br />tiempo de salida del aula. <br /> (Depende del orden de presentaciones)</p>
                 </div>
             </div>
 
@@ -109,8 +111,7 @@
                         Av. Córdoba 2122
                     </a>
                     <p class="text-slate-600 text-sm">C1113 Cdad. Autónoma de Buenos Aires</p>
-                    <p class="text-slate-500 text-xs mt-1">Facultad de Ciencias Económicas, UBA</p>
-                    <p class="text-sm text-slate-500 italic mt-2">El aula de presentación está pendiente de confirmación. Se compartirá si el evento sucede.</p>
+                    <p class="text-sm text-slate-500 italic mt-2">El aula de presentación está pendiente de confirmación. <br /> (Se compartirá si el evento sucede)</p>
                 </div>
             </div>
 
@@ -200,7 +201,7 @@
 
         // 3. Lógica de RSVP y WhatsApp
         const miWhatsApp = "5491126792726"; 
-        const mensajeWa = encodeURIComponent("¡Confirmo mi asistencia! Ahí estaré para festejar al nuevo actuario");
+        const mensajeWa = encodeURIComponent("¡Confirmo mi asistencia al evento actuarial!");
         document.getElementById('wa-button').href = `https://wa.me/${miWhatsApp}?text=${mensajeWa}`;
 
         const mathSymbols = ['∑', '∫', '∞', 'π', 'μ', 'σ', '%', 'e', 'Vx', 'qx', 'Ax', 'ax', 'äx', 'px', 'ω', 'Δ', '0', '1', '2', '3', '4', '5', '7', '8', '9', '+', '-', '='];
@@ -220,7 +221,7 @@
                 statusBox.innerHTML = `
                     <div class="flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-5 h-5"></i>
-                        <span>¡Asistencia confirmada!</span>
+                        <span>¡Que bien que puedas venir!</span>
                     </div>
                     <span class="text-sm font-normal text-green-700 mt-1">
                         No tiremos comida. En la facu se puede cambiar la comida por espuma, serpentinas y otras cosas.
@@ -261,7 +262,7 @@
 
             } else {
                 statusBox.className = "w-full p-4 rounded-xl text-center font-bold flex flex-col items-center justify-center gap-2 bg-slate-100 text-slate-600";
-                statusBox.innerText = '¡Qué lástima! 100% nos vemos en otro momento.';
+                statusBox.innerText = '¡No pasa nada! 100% nos vemos en otro momento.';
                 waButton.classList.add('hidden');
                 waButton.classList.remove('flex');
             }
